@@ -6,27 +6,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile Navigation Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
+  const navBackdrop = document.getElementById('navBackdrop');
+  const siteHeader = document.querySelector('.site-header');
+
+  const toggleNav = (open) => {
+    const shouldOpen = open !== undefined ? open : !navMenu.classList.contains('open');
+    navMenu.classList.toggle('open', shouldOpen);
+    if (mobileToggle) {
+      mobileToggle.classList.toggle('active', shouldOpen);
+      mobileToggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+    }
+    if (navBackdrop) {
+      navBackdrop.classList.toggle('active', shouldOpen);
+    }
+    if (siteHeader) {
+      siteHeader.classList.toggle('nav-open', shouldOpen);
+    }
+    document.body.style.overflow = shouldOpen ? 'hidden' : '';
+  };
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      const icon = mobileToggle.querySelector('i');
-      if (icon) {
-        if (navMenu.classList.contains('open')) {
-          icon.className = 'fa fa-times';
-        } else {
-          icon.className = 'fa fa-bars';
-        }
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleNav();
+    });
+
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', () => toggleNav(false));
+    }
+
+    // Close menu when clicking nav links or mobile CV button
+    document.querySelectorAll('.nav-link, .mobile-cv-item a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleNav(false);
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        toggleNav(false);
       }
     });
 
-    // Close menu when clicking nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) icon.className = 'fa fa-bars';
-      });
+    // Close on window resize above mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1040 && navMenu.classList.contains('open')) {
+        toggleNav(false);
+      }
     });
   }
 
