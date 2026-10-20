@@ -50,25 +50,37 @@
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About & Skills</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#projects" class="nav-link">R&D Projects</a></li>
+          <li><a href="#software-web" class="nav-link">Software & Web</a></li>
           <li><a href="#impact" class="nav-link">Impact</a></li>
           <li><a href="#recognition" class="nav-link">Recognition</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="mobile-cv-item">
+            <a href="https://aronchacko.github.io/portfolio/" target="_blank" rel="noopener" class="btn btn-glass" style="width: 100%; margin-bottom: 0.6rem; border-color: rgba(0, 240, 255, 0.4); color: var(--accent-cyan);">
+              <i class="fa fa-code"></i> Launch Software Portfolio <i class="fa fa-external-link"></i>
+            </a>
+            <a href="Aron's Resume.pdf" download class="btn btn-primary" style="width: 100%;">
+              <i class="fa fa-download"></i> Download Full CV
+            </a>
+          </li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="Aron's Resume.pdf" download class="btn btn-primary btn-sm">
+        <a href="Aron's Resume.pdf" download class="btn btn-primary btn-sm nav-cv-btn">
           <i class="fa fa-download"></i> Download CV
         </a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-          <i class="fa fa-bars"></i>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
         </button>
       </div>
     </div>
   </header>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
   <!-- ===================================================================
        HERO SECTION
@@ -796,6 +808,107 @@
             <div class="project-footer">
               <a class="project-link-btn" onclick="openProjectModal('modal-ml')">
                 View Architecture <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       SOFTWARE & WEB DEVELOPMENT PORTAL
+       =================================================================== -->
+  <section id="software-web" class="software-web-section">
+    <div class="container">
+      <div class="section-tag"><i class="fa fa-laptop"></i> Specialized Developer Archive</div>
+      <h2 class="section-title">Software & <span class="glow-text">Web Engineering</span></h2>
+      <p class="section-subtitle">
+        Explore my dedicated software engineering and full-stack web development portfolio featuring responsive web applications, API integrations, and developer toolkits.
+      </p>
+
+      <div class="software-portal-banner">
+        <div class="portal-grid">
+          <div class="portal-content">
+            <div class="portal-status-badge">
+              <span class="status-dot"></span>
+              <span class="status-text">Dedicated Portal • Live Deployments</span>
+            </div>
+            
+            <h3 class="portal-heading">Full-Stack Web & Software Portfolio</h3>
+            
+            <p class="portal-description">
+              Before expanding deeply into Physical AI and robotics leadership, I developed end-to-end full-stack web applications, interactive frontend interfaces, and database-driven backends. This specialized portal archives my software engineering projects, web apps, UI/UX designs, and Python web development work.
+            </p>
+
+            <div class="portal-tags">
+              <span class="portal-tag"><i class="fa fa-code"></i> Full-Stack Development</span>
+              <span class="portal-tag"><i class="fa fa-terminal"></i> Python Web Apps</span>
+              <span class="portal-tag"><i class="fa fa-desktop"></i> Responsive UI/UX</span>
+              <span class="portal-tag"><i class="fa fa-database"></i> Database & REST APIs</span>
+              <span class="portal-tag"><i class="fa fa-cubes"></i> Modern Frontend</span>
+            </div>
+
+            <div class="portal-actions">
+              <a href="https://aronchacko.github.io/portfolio/" target="_blank" rel="noopener" class="btn btn-primary portal-btn-glow">
+                <i class="fa fa-external-link"></i> Launch Software Portfolio
+              </a>
+              <a href="https://github.com/aronchacko" target="_blank" rel="noopener" class="btn btn-glass">
+                <i class="fa fa-github"></i> Explore GitHub Repos
+              </a>
+            </div>
+          </div>
+
+          <div class="portal-preview-card">
+            <div class="preview-mockup-header">
+              <div class="mockup-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="mockup-url-bar">
+                <i class="fa fa-lock"></i> https://aronchacko.github.io/portfolio/
+              </div>
+              <div class="mockup-action">
+                <i class="fa fa-external-link"></i>
+              </div>
+            </div>
+
+            <div class="preview-mockup-body">
+              <div class="mockup-telemetry-badge">
+                <span class="telemetry-label">PORTAL STATUS</span>
+                <span class="telemetry-value">ONLINE // ACTIVE</span>
+              </div>
+
+              <div class="mockup-hero-preview">
+                <div class="mockup-icon-box">
+                  <i class="fa fa-code"></i>
+                </div>
+                <h4>Aron Chacko — Developer Portal</h4>
+                <p>Web Applications • Software Architecture • Python & UI Development</p>
+              </div>
+
+              <div class="mockup-project-mini-list">
+                <div class="mini-project-item">
+                  <i class="fa fa-globe"></i>
+                  <span>Techverse Web Application</span>
+                  <span class="mini-badge">Live</span>
+                </div>
+                <div class="mini-project-item">
+                  <i class="fa fa-film"></i>
+                  <span>Movie Database & Streaming UI</span>
+                  <span class="mini-badge">Live</span>
+                </div>
+                <div class="mini-project-item">
+                  <i class="fa fa-line-chart"></i>
+                  <span>Predictive Data & ML Workflows</span>
+                  <span class="mini-badge">Python</span>
+                </div>
+              </div>
+
+              <a href="https://aronchacko.github.io/portfolio/" target="_blank" rel="noopener" class="mockup-redirect-overlay">
+                <span>Click to Open Developer Site</span>
+                <i class="fa fa-arrow-right"></i>
               </a>
             </div>
           </div>
